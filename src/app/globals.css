@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-hairline;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 96px;
+  }
+
+  body {
+    @apply bg-canvas text-ink antialiased;
+    font-feature-settings: "ss01" on, "cv01" on;
+  }
+
+  ::selection {
+    background-color: rgb(124 58 237 / 0.18);
+    color: #1e1b29;
+  }
+
+  /* Custom scrollbar — thin, gradient thumb, light track */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #fdfcff;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #a78bfa, #f0abfc);
+    border-radius: 999px;
+    border: 2px solid #fdfcff;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #8b5cf6, #ec4899);
+  }
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: #c4b5fd #fdfcff;
+  }
+
+  :focus-visible {
+    outline: 2px solid #7c3aed;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  /* Soft dotted grid, used behind the hero and CTA sections */
+  .bg-dot-grid {
+    background-image: radial-gradient(circle, rgba(124, 58, 237, 0.16) 1px, transparent 1px);
+    background-size: 26px 26px;
+  }
+
+  /* Frosted glass surface */
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl;
+  }
+
+  /* Gradient text, used sparingly for the single signature headline moment */
+  .text-gradient {
+    @apply bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-500 bg-clip-text text-transparent bg-auto-200 animate-gradient-x;
+  }
+
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
