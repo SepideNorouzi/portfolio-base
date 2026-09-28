@@ -15,7 +15,7 @@ Edit one data file, swap in your projects, and ship.
 
 <br />
 
-![Portfolio preview](./screenshot.png)
+![Portfolio preview](./docs/screenshot.png)
 
 <br />
 
