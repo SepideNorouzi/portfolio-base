@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 export default function NotFound() {
   return (
     <div className="container-page flex min-h-[70vh] flex-col items-center justify-center py-24 text-center">
-      <p className="font-mono text-sm text-violet-500">{"// 404"}</p>
+      <p className="font-mono text-sm text-violet-300">{"// 404"}</p>
       <h1 className="mt-4 text-4xl font-bold text-ink sm:text-5xl">
         This route doesn&apos;t exist yet.
       </h1>

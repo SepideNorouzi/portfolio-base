@@ -12,7 +12,7 @@ export function Services() {
       <Reveal>
         <SectionHeading
           kicker="what I do"
-          title="Design and engineering, treated as one discipline"
+          title="Design and engineering, working as one system"
           description="Four areas I keep coming back to — each one shows up somewhere in the projects below."
         />
       </Reveal>
@@ -23,11 +23,15 @@ export function Services() {
           return (
             <Reveal key={service.title} delay={i * 0.08}>
               <GlowCard className="h-full p-6">
-                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-100 to-pink-100 text-violet-600">
+                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-500/20 to-pink-500/20 text-violet-300">
                   <Icon className="h-5 w-5" />
                 </div>
-                <h3 className="mt-5 text-base font-semibold text-ink">{service.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-body">{service.description}</p>
+                <h3 className="mt-5 text-base font-semibold text-ink">
+                  {service.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-body">
+                  {service.description}
+                </p>
               </GlowCard>
             </Reveal>
           );

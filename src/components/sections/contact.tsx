@@ -9,7 +9,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { Magnetic } from "@/components/ui/magnetic";
 
 const inputClasses =
-  "w-full rounded-2xl border border-hairline bg-white/70 px-4 py-3 text-sm text-ink outline-none transition-colors placeholder:text-body/50 focus:border-violet-400 focus:ring-2 focus:ring-violet-200";
+  "w-full rounded-2xl border border-hairline bg-elevated/80 px-4 py-3 text-sm text-ink outline-none transition-colors placeholder:text-body/50 focus:border-violet-400 focus:ring-2 focus:ring-violet-500/30";
 
 const quickLinks = [
   {
@@ -108,7 +108,7 @@ export function Contact() {
               <Magnetic className="block w-full">
                 <button
                   type="submit"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-ink px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-glow-lg"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-contrast px-6 py-3.5 text-sm font-semibold text-canvas transition-all duration-300 hover:-translate-y-0.5 hover:shadow-glow-lg"
                 >
                   <Send className="h-4 w-4" />
                   Send message
@@ -117,7 +117,7 @@ export function Contact() {
 
               <p
                 className={`text-center text-xs transition-opacity duration-300 ${
-                  sent ? "text-violet-600 opacity-100" : "text-body/60 opacity-100"
+                  sent ? "text-violet-300 opacity-100" : "text-body/60 opacity-100"
                 }`}
               >
                 {sent
@@ -135,9 +135,9 @@ export function Contact() {
                 href={link.href}
                 target={link.href.startsWith("http") ? "_blank" : undefined}
                 rel={link.href.startsWith("http") ? "noreferrer" : undefined}
-                className="group flex items-center gap-4 rounded-3xl border border-hairline bg-white/80 p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-violet-200 hover:shadow-glow"
+                className="group flex items-center gap-4 rounded-3xl border border-hairline bg-surface/80 p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-violet-400/50 hover:shadow-glow"
               >
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-100 to-pink-100 text-violet-600">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-500/20 to-pink-500/20 text-violet-300">
                   <link.icon className="h-5 w-5" />
                 </span>
                 <span className="flex-1">

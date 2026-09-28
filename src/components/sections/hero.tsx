@@ -15,9 +15,9 @@ export function Hero() {
       className="relative overflow-hidden pb-20 pt-36 sm:pt-40 lg:pb-28 lg:pt-44"
     >
       <div className="bg-dot-grid pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,black,transparent)]" />
-      <div className="pointer-events-none absolute -left-32 top-20 h-72 w-72 animate-blob rounded-full bg-violet-200/50 blur-3xl" />
+      <div className="pointer-events-none absolute -left-32 top-20 h-72 w-72 animate-blob rounded-full bg-violet-600/25 blur-3xl" />
       <div
-        className="pointer-events-none absolute -right-24 top-52 h-72 w-72 animate-blob rounded-full bg-cyan-200/50 blur-3xl"
+        className="pointer-events-none absolute -right-24 top-52 h-72 w-72 animate-blob rounded-full bg-cyan-500/20 blur-3xl"
         style={{ animationDelay: "3s" }}
       />
 
@@ -27,7 +27,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-hairline bg-white/80 px-4 py-1.5 text-xs font-medium text-body shadow-sm backdrop-blur"
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-hairline bg-surface/80 px-4 py-1.5 text-xs font-medium text-body shadow-sm backdrop-blur"
           >
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />

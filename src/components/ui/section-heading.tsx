@@ -10,7 +10,7 @@ interface SectionHeadingProps {
 export function SectionHeading({ kicker, title, description, className }: SectionHeadingProps) {
   return (
     <div className={cn("max-w-2xl", className)}>
-      <p className="mb-3 font-mono text-sm text-violet-500">
+      <p className="mb-3 font-mono text-sm text-violet-300">
         <span className="text-body/50">{"//"}</span> {kicker}
       </p>
       <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">{title}</h2>

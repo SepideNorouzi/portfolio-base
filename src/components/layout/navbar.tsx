@@ -67,7 +67,7 @@ export function Navbar() {
           <div className="hidden md:block">
             <Link
               href="/#contact"
-              className="inline-flex items-center gap-1.5 rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-glow-lg"
+              className="inline-flex items-center gap-1.5 rounded-full bg-contrast px-5 py-2.5 text-sm font-semibold text-canvas transition-all duration-300 hover:-translate-y-0.5 hover:shadow-glow-lg"
             >
               Let&apos;s talk
               <ArrowUpRight className="h-3.5 w-3.5" />
@@ -99,7 +99,7 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="rounded-xl px-4 py-3 text-sm font-medium text-body transition-colors hover:bg-violet-50 hover:text-ink"
+                  className="rounded-xl px-4 py-3 text-sm font-medium text-body transition-colors hover:bg-violet-500/10 hover:text-ink"
                 >
                   {link.label}
                 </Link>
@@ -107,7 +107,7 @@ export function Navbar() {
               <Link
                 href="/#contact"
                 onClick={() => setOpen(false)}
-                className="mt-1 rounded-xl bg-ink px-4 py-3 text-center text-sm font-semibold text-white"
+                className="mt-1 rounded-xl bg-contrast px-4 py-3 text-center text-sm font-semibold text-canvas"
               >
                 Let&apos;s talk
               </Link>

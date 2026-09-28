@@ -4,7 +4,7 @@ import { navLinks, siteConfig } from "@/lib/data";
 
 export function Footer() {
   return (
-    <footer className="border-t border-hairline bg-white/60">
+    <footer className="border-t border-hairline bg-surface/70">
       <div className="container-page grid gap-10 py-14 sm:grid-cols-3">
         <div>
           <div className="flex items-center gap-2.5">
@@ -20,7 +20,7 @@ export function Footer() {
         </div>
 
         <div>
-          <p className="font-mono text-xs text-violet-500">{"// navigate"}</p>
+          <p className="font-mono text-xs text-violet-300">{"// navigate"}</p>
           <ul className="mt-4 space-y-2.5">
             {navLinks.map((link) => (
               <li key={link.href}>
@@ -36,7 +36,7 @@ export function Footer() {
         </div>
 
         <div>
-          <p className="font-mono text-xs text-violet-500">{"// connect"}</p>
+          <p className="font-mono text-xs text-violet-300">{"// connect"}</p>
           <ul className="mt-4 space-y-2.5">
             <li>
               <a
@@ -67,7 +67,7 @@ export function Footer() {
             CSS.
           </p>
           <p className="font-mono">
-            status: <span className="text-emerald-600">online</span>
+            status: <span className="text-emerald-400">online</span>
           </p>
         </div>
       </div>

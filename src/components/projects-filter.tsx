@@ -36,8 +36,8 @@ export function ProjectsFilter({ projects }: { projects: Project[] }) {
               className={cn(
                 "rounded-full border px-4 py-2 text-sm font-medium transition-colors duration-200",
                 active === cat
-                  ? "border-transparent bg-ink text-white"
-                  : "border-hairline bg-white text-body hover:border-violet-300 hover:text-ink"
+                  ? "border-transparent bg-contrast text-canvas"
+                  : "border-hairline bg-surface text-body hover:border-violet-400/60 hover:text-ink"
               )}
             >
               {cat}
@@ -51,7 +51,7 @@ export function ProjectsFilter({ projects }: { projects: Project[] }) {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search by name or stack..."
-            className="w-full rounded-full border border-hairline bg-white py-2.5 pl-10 pr-4 text-sm text-ink outline-none transition-colors focus:border-violet-400 focus:ring-2 focus:ring-violet-200"
+            className="w-full rounded-full border border-hairline bg-elevated py-2.5 pl-10 pr-4 text-sm text-ink outline-none transition-colors placeholder:text-body/50 focus:border-violet-400 focus:ring-2 focus:ring-violet-500/30"
           />
         </div>
       </div>

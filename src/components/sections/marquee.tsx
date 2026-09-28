@@ -4,7 +4,7 @@ export function TechMarquee() {
   const track = [...techStack, ...techStack];
 
   return (
-    <section aria-label="Tech stack" className="border-y border-hairline bg-white/60 py-6">
+    <section aria-label="Tech stack" className="border-y border-hairline bg-surface/60 py-6">
       <div className="overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
         <div className="flex w-max animate-marquee items-center gap-10">
           {track.map((tech, i) => (

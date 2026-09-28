@@ -12,9 +12,10 @@ export const siteConfig = {
   name: "Sepide Norouzi",
   initials: "S.",
   role: "Frontend Developer & UI/UX Designer",
-  headline: "I design the interface, then I make the types keep every promise.",
+  headline:
+    "I design thoughtful interfaces, then build them into reliable products.",
   subhead:
-    "Frontend developer and UI/UX designer studying computer engineering. I move from Figma frames to production React and TypeScript, with state architecture and motion that actually behaves.",
+    "Frontend developer and UI/UX designer studying computer engineering. I turn ideas and designs into responsive React and Next.js experiences with TypeScript, well-structured state, and interactions that feel intentional.",
   location: "Computer Engineering student, building on the side",
   available: true,
   // TODO: swap these for your real links before you deploy
@@ -34,7 +35,7 @@ export const navLinks = [
 export const stats = [
   { value: "5+", label: "Projects shipped" },
   { value: "13", label: "Tools & stacks" },
-  { value: "100%", label: "Figma-first" },
+  { value: "100%", label: "Design → Code" },
   { value: "∞", label: "Always learning" },
 ];
 
@@ -88,7 +89,14 @@ export const projects: Project[] = [
       "A full-stack book-tracking app with a Django REST backend and a React + TypeScript frontend, built around a strict wire-type to domain-type architecture.",
     description:
       "Reader's Nook tracks books, quotes, and collections behind a JWT-authenticated API. Every resource is split into snake_case wire types and camelCase domain types, connected by explicit mapper functions, so the UI never touches a raw API shape directly. A dual-mode repository facade lets the same components run against Zustand-backed demo data or TanStack Query-backed live data without branching UI logic.",
-    stack: ["React", "TypeScript", "Django REST", "TanStack Query", "Zustand", "Vitest"],
+    stack: [
+      "React",
+      "TypeScript",
+      "Django REST",
+      "TanStack Query",
+      "Zustand",
+      "Vitest",
+    ],
     highlights: [
       "Dual-mode demo/admin repository facade — Zustand for demo state, TanStack Query for server state, both branches always called to respect the Rules of Hooks",
       "Wire type → domain type derivation (ApiBook → Book), mapping snake_case to camelCase and numeric IDs to strings",

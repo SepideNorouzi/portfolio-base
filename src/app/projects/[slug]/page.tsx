@@ -81,14 +81,14 @@ export default function ProjectDetailPage({ params }: PageProps) {
         </Reveal>
 
         <Reveal delay={0.2}>
-          <div className="rounded-3xl border border-hairline bg-white/80 p-6">
-            <p className="font-mono text-xs text-violet-500">{"// more"}</p>
+          <div className="rounded-3xl border border-hairline bg-surface/80 p-6">
+            <p className="font-mono text-xs text-violet-300">{"// more"}</p>
 
             <a
               href={siteConfig.github}
               target="_blank"
               rel="noreferrer"
-              className="mt-4 flex items-center gap-3 rounded-2xl border border-hairline p-4 transition-colors hover:border-violet-300"
+              className="mt-4 flex items-center gap-3 rounded-2xl border border-hairline bg-elevated/50 p-4 transition-colors hover:border-violet-400/60"
             >
               <Github className="h-5 w-5 text-ink" />
               <span className="text-sm font-medium text-ink">View on GitHub</span>
@@ -96,7 +96,7 @@ export default function ProjectDetailPage({ params }: PageProps) {
 
             <Link
               href={`/projects/${next.slug}`}
-              className="group mt-3 flex items-center justify-between gap-3 rounded-2xl border border-hairline p-4 transition-colors hover:border-violet-300"
+              className="group mt-3 flex items-center justify-between gap-3 rounded-2xl border border-hairline bg-elevated/50 p-4 transition-colors hover:border-violet-400/60"
             >
               <span>
                 <span className="block text-xs text-body">Next project</span>

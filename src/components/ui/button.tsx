@@ -15,8 +15,8 @@ export function Button({ href, children, variant = "primary", className }: Butto
     "inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300";
   const styles =
     variant === "primary"
-      ? "bg-ink text-white hover:-translate-y-0.5 hover:shadow-glow-lg"
-      : "border border-hairline bg-white text-ink hover:-translate-y-0.5 hover:border-violet-300";
+      ? "bg-contrast text-canvas hover:-translate-y-0.5 hover:shadow-glow-lg"
+      : "border border-hairline bg-surface text-ink hover:-translate-y-0.5 hover:border-violet-400/60";
 
   const classes = cn(base, styles, className);
 

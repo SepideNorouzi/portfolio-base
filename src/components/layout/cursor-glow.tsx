@@ -32,7 +32,7 @@ export function CursorGlow() {
   return (
     <motion.div
       aria-hidden
-      className="pointer-events-none fixed left-0 top-0 z-0 h-[420px] w-[420px] rounded-full opacity-[0.07] blur-3xl"
+      className="pointer-events-none fixed left-0 top-0 z-0 h-[420px] w-[420px] rounded-full opacity-[0.22] blur-3xl"
       style={{
         x: springX,
         y: springY,
