@@ -106,23 +106,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "classroom-app",
-    title: "Classroom App",
-    category: "Frontend",
-    accent: "pink",
-    summary:
-      "A classroom membership app rebuilt on TanStack Query and Zustand, with careful attention to join and leave flows.",
-    description:
-      "This classroom membership tool migrated off React Redux entirely. Auth tokens now live in a single Zustand store instead of cookies, read through a getState() pattern for logic outside components, while server state — classrooms, membership, rosters — is owned by TanStack Query behind a typed query-key factory.",
-    stack: ["React", "TypeScript", "TanStack Query", "Zustand"],
-    highlights: [
-      "Migrated auth and classroom state from React Redux to TanStack Query + Zustand",
-      "Auto-join-on-visit flow using useEffect guarded by a useRef, so revisiting a join link never double-fires the mutation",
-      "Leave-and-navigate flow built on mutateAsync, so the redirect only fires once the mutation actually resolves",
-      "A classroomKeys query-key factory keeping cache invalidation consistent across the feature",
-    ],
-  },
-  {
     slug: "flashlingo",
     title: "FlashLingo",
     category: "Frontend",
@@ -139,6 +122,24 @@ export const projects: Project[] = [
       "A useFlashcardSession hook separating session progress from the core useFlashcards data logic",
     ],
   },
+  {
+    slug: "classroom-app",
+    title: "Classroom App",
+    category: "Learning",
+    accent: "pink",
+    summary:
+      "A classroom membership app rebuilt on TanStack Query and Zustand, with careful attention to join and leave flows.",
+    description:
+      "This classroom membership tool migrated off React Redux entirely. Auth tokens now live in a single Zustand store instead of cookies, read through a getState() pattern for logic outside components, while server state — classrooms, membership, rosters — is owned by TanStack Query behind a typed query-key factory.",
+    stack: ["React", "TypeScript", "TanStack Query", "Zustand"],
+    highlights: [
+      "Migrated auth and classroom state from React Redux to TanStack Query + Zustand",
+      "Auto-join-on-visit flow using useEffect guarded by a useRef, so revisiting a join link never double-fires the mutation",
+      "Leave-and-navigate flow built on mutateAsync, so the redirect only fires once the mutation actually resolves",
+      "A classroomKeys query-key factory keeping cache invalidation consistent across the feature",
+    ],
+  },
+
   {
     slug: "cafe-menu",
     title: "Café Menu & Admin Dashboard",
