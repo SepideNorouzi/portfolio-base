@@ -1,16 +1,9 @@
 import type { Project, ServiceItem } from "./types";
 
-/**
- * ─────────────────────────────────────────────────────────────
- *  EDIT ME
- *  This is the only file you should need to touch to make this
- *  portfolio yours: swap the copy, contact links, and projects.
- * ─────────────────────────────────────────────────────────────
- */
 
 export const siteConfig = {
   name: "Sepide Norouzi",
-  initials: "S.",
+  initials: "SN",
   role: "Frontend Developer & UI/UX Designer",
   headline:
     "I design thoughtful interfaces, then build them into reliable products.",
@@ -18,8 +11,7 @@ export const siteConfig = {
     "Frontend developer and UI/UX designer studying computer engineering. I turn ideas and designs into responsive React and Next.js experiences with TypeScript, well-structured state, and interactions that feel intentional.",
   location: "Computer Engineering student, building on the side",
   available: true,
-  // TODO: swap these for your real links before you deploy
-  email: "hello@example.com",
+  email: "sepidenorouzi17@gmail.com",
   github: "https://github.com/SepideNorouzi",
   linkedin: "#",
   resumeUrl: "#",
