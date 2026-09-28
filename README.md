@@ -122,7 +122,7 @@ No environment variables or API keys are required.
 
 ## License
 
-Released under the [Apache License](./LICENSE). Add a `LICENSE` file to the repo root to make it official.
+Released under the [Apache License](./LICENSE).
 
 ---
 
