@@ -66,8 +66,8 @@ monospace voice for anything code-flavored, and a hero built around an animated 
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/SepideNorouzi/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/SepideNorouzi/portfolio-base.git
+cd portfolio-base
 
 # 2. Install dependencies
 npm install
@@ -89,57 +89,7 @@ No environment variables or API keys are required.
 | `npm run start` | Serves the production build                   |
 | `npm run lint`  | Runs ESLint                                   |
 
-## Make it yours
 
-Almost everything is edited in **`src/lib/data.ts`**:
-
-```ts
-export const siteConfig = {
-  name: "Your Name",
-  role: "Your Role",
-  headline: "Your one-line pitch.",
-  subhead: "A sentence or two about what you do.",
-  available: true, // toggles the green status pill in the hero
-  email: "you@example.com",
-  github: "https://github.com/your-username",
-  linkedin: "https://linkedin.com/in/your-username",
-  resumeUrl: "/resume.pdf", // drop your PDF into /public
-};
-```
-
-### Add a project
-
-Add an object to the `projects` array in `src/lib/data.ts`. The `slug` becomes its URL
-(`/projects/your-slug`) and the page is generated automatically.
-
-```ts
-{
-  slug: "my-new-project",
-  title: "My New Project",
-  category: "Frontend",        // "Full-Stack" | "Frontend" | "Learning"
-  accent: "pink",              // "violet" | "pink" | "cyan"
-  featured: false,             // true = wider card on the home grid
-  summary: "One or two sentences for the card.",
-  description: "A longer paragraph for the detail page.",
-  stack: ["React", "TypeScript"],
-  highlights: ["What you built", "A hard problem you solved"],
-}
-```
-
-### Other things to swap
-
-| What                               | Where                                          |
-| ---------------------------------- | ---------------------------------------------- |
-| Colors, fonts, shadows, animations | `tailwind.config.ts`                           |
-| Category accent colors             | `accentStyles` in `src/lib/utils.ts`           |
-| Google Fonts link                  | `src/app/layout.tsx`                           |
-| Tech-stack ticker items            | `techStack` in `src/lib/data.ts`               |
-| Hero code-window snippet           | `src/components/sections/hero-code-window.tsx` |
-| Favicon                            | `public/favicon.svg`                           |
-| Contact form behavior              | `src/components/sections/contact.tsx`          |
-
-The contact form uses a `mailto:` link so it works without a server. To receive submissions
-directly, replace `handleSubmit` with a call to your own API route, Formspree or EmailJS.
 
 ## Project structure
 
@@ -169,22 +119,6 @@ directly, replace `handleSubmit` with a call to your own API route, Formspree or
         └── utils.ts                cn() helper and accent-color lookup
 ```
 
-## Deployment
-
-The easiest option is [Vercel](https://vercel.com/):
-
-1. Push this repo to GitHub.
-2. Import it at [vercel.com/new](https://vercel.com/new).
-3. Keep the default settings and deploy.
-
-It also runs anywhere that supports Next.js, since the pages are statically generated at build time.
-
-## Design notes
-
-- **Light mode only, by design.** The palette is a violet / pink / cyan accent set on a soft off-white canvas.
-- **One signature moment.** The animated code window in the hero is where the boldness is spent; the rest of the UI stays quieter so it lands.
-- **Color carries meaning.** Project accents are tied to category, so the color-coding is information rather than decoration.
-- **Two typefaces, two jobs.** Plus Jakarta Sans for reading, JetBrains Mono for anything that speaks in code.
 
 ## License
 
