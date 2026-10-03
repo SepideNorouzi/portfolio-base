@@ -32,19 +32,49 @@ const quickLinks = [
   },
 ];
 
+type FormStatus = "idle" | "sending" | "sent" | "error";
+
 export function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [error, setError] = useState("");
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  function edit(update: (value: string) => void) {
+    return (value: string) => {
+      if (status === "sent" || status === "error") setStatus("idle");
+      update(value);
+    };
+  }
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const subject = encodeURIComponent(`Portfolio inquiry from ${name || "a visitor"}`);
-    const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
-    window.location.href = `mailto:${siteConfig.email}?subject=${subject}&body=${body}`;
-    setSent(true);
-    setTimeout(() => setSent(false), 5000);
+    setStatus("sending");
+    setError("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      });
+      const data = (await response.json().catch(() => null)) as { error?: string } | null;
+
+      if (!response.ok) {
+        setStatus("error");
+        setError(data?.error || "Could not send your message. Please try again.");
+        return;
+      }
+
+      setStatus("sent");
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch {
+      setStatus("error");
+      setError("Could not send your message. Check your connection and try again.");
+    }
   }
 
   return (
@@ -53,7 +83,7 @@ export function Contact() {
         <SectionHeading
           kicker="get in touch"
           title="Tell me what you're building"
-          description="Fill this out and it opens straight in your email client, addressed to me — no backend required."
+          description={`Fill this out and it is sent straight to ${siteConfig.email}.`}
         />
       </Reveal>
 
@@ -69,7 +99,7 @@ export function Contact() {
                   id="name"
                   required
                   value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  onChange={(e) => edit(setName)(e.target.value)}
                   placeholder="Ada Lovelace"
                   className={inputClasses}
                 />
@@ -84,7 +114,7 @@ export function Contact() {
                   type="email"
                   required
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => edit(setEmail)(e.target.value)}
                   placeholder="you@example.com"
                   className={inputClasses}
                 />
@@ -99,7 +129,7 @@ export function Contact() {
                   required
                   rows={5}
                   value={message}
-                  onChange={(e) => setMessage(e.target.value)}
+                  onChange={(e) => edit(setMessage)(e.target.value)}
                   placeholder="Tell me about your project..."
                   className={`${inputClasses} resize-none`}
                 />
@@ -108,21 +138,29 @@ export function Contact() {
               <Magnetic className="block w-full">
                 <button
                   type="submit"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-contrast px-6 py-3.5 text-sm font-semibold text-canvas transition-all duration-300 hover:-translate-y-0.5 hover:shadow-glow-lg"
+                  disabled={status === "sending"}
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-contrast px-6 py-3.5 text-sm font-semibold text-canvas transition-all duration-300 hover:-translate-y-0.5 hover:shadow-glow-lg disabled:cursor-wait disabled:opacity-70 disabled:hover:translate-y-0"
                 >
                   <Send className="h-4 w-4" />
-                  Send message
+                  {status === "sending" ? "Sending…" : "Send message"}
                 </button>
               </Magnetic>
 
               <p
+                aria-live="polite"
                 className={`text-center text-xs transition-opacity duration-300 ${
-                  sent ? "text-violet-300 opacity-100" : "text-body/60 opacity-100"
+                  status === "sent"
+                    ? "text-violet-300"
+                    : status === "error"
+                      ? "text-pink-400"
+                      : "text-body/60"
                 }`}
               >
-                {sent
-                  ? "Opening your email client now — thank you!"
-                  : "Opens your email client with everything pre-filled."}
+                {status === "sent"
+                  ? `Sent. It will arrive at ${siteConfig.email}.`
+                  : status === "error"
+                    ? error
+                    : `Messages are delivered to ${siteConfig.email}.`}
               </p>
             </form>
           </GlowCard>

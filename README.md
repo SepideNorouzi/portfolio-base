@@ -36,7 +36,7 @@ monospace voice for anything code-flavored, and a hero built around an animated 
 - **Animated hero** with a typed code-editor illustration, floating tech chips and drifting gradient blobs
 - **Micro-interactions**: magnetic buttons, cursor-following spotlight on cards, count-up stats, scroll-triggered reveals, an infinite marquee, a scroll-progress bar and an ambient cursor glow
 - **Route transitions** via the App Router `template.tsx`
-- **Working contact form** with zero backend: it opens the visitor's email client with the message pre-filled
+- **Working contact form** that sends the message to your inbox (`/api/contact`)
 - **Responsive** from small phones to wide desktops, with a slide-down mobile menu
 - **Accessible motion**: animations respect `prefers-reduced-motion`
 - **SEO-ready** metadata per page and a custom 404
@@ -78,7 +78,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) and the page hot-reloads as you edit.
 
-No environment variables or API keys are required.
+The contact form delivers to the address in `src/lib/data.ts`. To send through your own Gmail account with Nodemailer, copy `.env.example` to `.env.local` and set `SMTP_USER` plus a Gmail app password in `SMTP_PASS`. Without those, the form delivers through FormSubmit to the same address (confirm the activation email the first time).
 
 ### Scripts
 
